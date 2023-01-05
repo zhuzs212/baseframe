@@ -1,6 +1,6 @@
-package com.baseframe.comm.util;
+package com.baseframe.comm.utils;
 
-import com.baseframe.comm.common.RedisErrorEnum;
+import com.baseframe.comm.constant.RedisErrorEnum;
 import com.baseframe.comm.exception.RedisException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;

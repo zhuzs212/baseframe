@@ -1,4 +1,4 @@
-package com.baseframe.comm.util;
+package com.baseframe.comm.utils;
 
 import com.alibaba.fastjson2.JSONObject;
 import java.security.MessageDigest;

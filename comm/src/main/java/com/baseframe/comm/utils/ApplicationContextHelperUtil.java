@@ -1,4 +1,4 @@
-package com.baseframe.comm.util;
+package com.baseframe.comm.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

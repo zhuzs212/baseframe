@@ -1,10 +1,10 @@
-package com.baseframe.comm.util;
+package com.baseframe.comm.utils;
 
-import com.baseframe.comm.common.BaseEnumInterface;
-import com.baseframe.comm.common.Constant;
-import com.baseframe.comm.common.SysExceptionEnum;
+import com.baseframe.comm.constant.BaseEnumInterface;
+import com.baseframe.comm.constant.Constant;
+import com.baseframe.comm.constant.SysExceptionEnum;
 import com.baseframe.comm.exception.ServiceException;
-import com.baseframe.comm.model.BaseResponse;
+import com.baseframe.comm.entity.BaseResponse;
 
 /**
  * 通用返回数据模型

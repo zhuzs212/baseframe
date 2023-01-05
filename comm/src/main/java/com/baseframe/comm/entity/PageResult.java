@@ -1,4 +1,4 @@
-package com.baseframe.comm.model;
+package com.baseframe.comm.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

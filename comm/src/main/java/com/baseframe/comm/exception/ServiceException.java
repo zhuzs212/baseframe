@@ -1,6 +1,6 @@
 package com.baseframe.comm.exception;
 
-import com.baseframe.comm.common.BaseEnumInterface;
+import com.baseframe.comm.constant.BaseEnumInterface;
 
 /**
  * 业务异常类

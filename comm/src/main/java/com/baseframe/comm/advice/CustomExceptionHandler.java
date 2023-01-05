@@ -1,9 +1,9 @@
 package com.baseframe.comm.advice;
 
-import com.baseframe.comm.common.SysExceptionEnum;
+import com.baseframe.comm.constant.SysExceptionEnum;
 import com.baseframe.comm.exception.ServiceException;
-import com.baseframe.comm.model.BaseResponse;
-import com.baseframe.comm.util.BaseResponseUtil;
+import com.baseframe.comm.entity.BaseResponse;
+import com.baseframe.comm.utils.BaseResponseUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

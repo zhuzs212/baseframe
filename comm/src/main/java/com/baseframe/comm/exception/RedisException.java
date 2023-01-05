@@ -1,6 +1,6 @@
 package com.baseframe.comm.exception;
 
-import com.baseframe.comm.common.BaseEnumInterface;
+import com.baseframe.comm.constant.BaseEnumInterface;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

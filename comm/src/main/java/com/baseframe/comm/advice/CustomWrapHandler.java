@@ -1,8 +1,8 @@
 package com.baseframe.comm.advice;
 
-import com.baseframe.comm.common.OperationEnum;
+import com.baseframe.comm.constant.OperationEnum;
 import com.baseframe.comm.exception.ServiceException;
-import com.baseframe.comm.util.BaseResponseUtil;
+import com.baseframe.comm.utils.BaseResponseUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;

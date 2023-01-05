@@ -1,6 +1,6 @@
-package com.baseframe.comm.model;
+package com.baseframe.comm.entity;
 
-import com.baseframe.comm.common.Constant;
+import com.baseframe.comm.constant.Constant;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

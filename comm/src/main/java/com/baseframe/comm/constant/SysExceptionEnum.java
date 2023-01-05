@@ -1,6 +1,5 @@
-package com.baseframe.comm.common;
+package com.baseframe.comm.constant;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 import lombok.AllArgsConstructor;
 
 /**

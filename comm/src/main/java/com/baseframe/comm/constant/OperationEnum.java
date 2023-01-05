@@ -1,4 +1,4 @@
-package com.baseframe.comm.common;
+package com.baseframe.comm.constant;
 
 
 import lombok.AllArgsConstructor;
