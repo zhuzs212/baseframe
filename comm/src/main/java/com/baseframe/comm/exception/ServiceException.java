@@ -1,6 +1,6 @@
 package com.baseframe.comm.exception;
 
-import com.baseframe.comm.constant.BaseEnumInterface;
+import com.baseframe.comm.constant.EnumBaseInterface;
 
 /**
  * 业务异常类
@@ -20,7 +20,7 @@ public class ServiceException extends RuntimeException {
      *
      * @param exceptionInfo 异常枚举
      */
-    public ServiceException(BaseEnumInterface exceptionInfo) {
+    public ServiceException(EnumBaseInterface exceptionInfo) {
         super(exceptionInfo.getMessage());
         this.code = exceptionInfo.getCode();
     }

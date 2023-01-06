@@ -1,8 +1,8 @@
 package com.baseframe.comm.utils;
 
-import com.baseframe.comm.constant.BaseEnumInterface;
+import com.baseframe.comm.constant.EnumBaseInterface;
 import com.baseframe.comm.constant.Constant;
-import com.baseframe.comm.constant.SysExceptionEnum;
+import com.baseframe.comm.constant.SysExceptionEnumBase;
 import com.baseframe.comm.exception.ServiceException;
 import com.baseframe.comm.entity.BaseResponse;
 
@@ -29,7 +29,7 @@ public final class BaseResponseUtil {
      */
     private BaseResponseUtil() {
         // TODO 可抛出异常，防止通过反射实例化对象
-        throw new ServiceException(SysExceptionEnum.SYS_EXCEPTION);
+        throw new ServiceException(SysExceptionEnumBase.SYS_EXCEPTION);
     }
 
     /**
@@ -57,7 +57,7 @@ public final class BaseResponseUtil {
      * @param operationEnum 枚举
      * @return 响应实体
      */
-    public static BaseResponse<Object> success(BaseEnumInterface operationEnum) {
+    public static BaseResponse<Object> success(EnumBaseInterface operationEnum) {
         return success().setCode(operationEnum.getCode()).setMessage(operationEnum.getMessage());
     }
 
@@ -78,7 +78,7 @@ public final class BaseResponseUtil {
      * @param baseResponseCode 异常枚举
      * @return 响应实体
      */
-    public static BaseResponse<Object> fail(BaseEnumInterface baseResponseCode) {
+    public static BaseResponse<Object> fail(EnumBaseInterface baseResponseCode) {
         return new BaseResponse<>().setStatus(Constant.FAIL).setCode(baseResponseCode.getCode()).setMessage(baseResponseCode.getMessage());
     }
 
@@ -88,7 +88,7 @@ public final class BaseResponseUtil {
      * @param sysExceptionEnum 异常枚举
      * @return 响应实体
      */
-    public static BaseResponse<Object> error(BaseEnumInterface sysExceptionEnum) {
+    public static BaseResponse<Object> error(EnumBaseInterface sysExceptionEnum) {
         return new BaseResponse<>().setStatus(Constant.ERROR).setCode(sysExceptionEnum.getCode()).setMessage(sysExceptionEnum.getMessage());
     }
 }

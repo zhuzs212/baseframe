@@ -4,7 +4,7 @@ package com.baseframe.comm.constant;
  * @author zhuzishuang
  * @date 2022/5/17
  */
-public enum RedisErrorEnum implements BaseEnumInterface {
+public enum RedisErrorEnumBase implements EnumBaseInterface {
 
     /**
      * 获取redis连接池错误
@@ -18,7 +18,7 @@ public enum RedisErrorEnum implements BaseEnumInterface {
     private Integer code = null;
     private String message = null;
 
-    RedisErrorEnum(Integer errCode, String errMessage) {
+    RedisErrorEnumBase(Integer errCode, String errMessage) {
         this.code = errCode;
         this.message = errMessage;
     }

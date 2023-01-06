@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
  */
 @AllArgsConstructor
 @Accessors(chain = true)
-public enum OperationEnum implements BaseEnumInterface {
+public enum OperationEnumBase implements EnumBaseInterface {
     /**
      * 登陆成功
      */

@@ -6,7 +6,7 @@ package com.baseframe.comm.constant;
  * @author zhu_zishuang
  * @date 2021-03-12
  */
-public interface BaseEnumInterface {
+public interface EnumBaseInterface {
     /**
      * 获取编码
      */

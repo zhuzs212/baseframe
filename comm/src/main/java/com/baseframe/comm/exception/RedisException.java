@@ -1,6 +1,6 @@
 package com.baseframe.comm.exception;
 
-import com.baseframe.comm.constant.BaseEnumInterface;
+import com.baseframe.comm.constant.EnumBaseInterface;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -21,13 +21,13 @@ public class RedisException extends RuntimeException {
     public RedisException(String message) {
     }
 
-    public RedisException(BaseEnumInterface e) {
+    public RedisException(EnumBaseInterface e) {
         super(e.getMessage());
         this.errorCode = e.getCode();
         this.errorMessage = e.getMessage();
     }
 
-    public RedisException(BaseEnumInterface e, String msg) {
+    public RedisException(EnumBaseInterface e, String msg) {
         super(msg);
         this.errorCode = e.getCode();
         this.errorMessage = msg;
@@ -39,7 +39,7 @@ public class RedisException extends RuntimeException {
         this.errorMessage = msg;
     }
 
-    public RedisException(BaseEnumInterface ie, Exception e) {
+    public RedisException(EnumBaseInterface ie, Exception e) {
         super(ie.getMessage());
         this.errorCode = ie.getCode();
         this.errorMessage = e.getMessage();

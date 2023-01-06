@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
  * @date 2021-03-12
  */
 @AllArgsConstructor
-public enum SysExceptionEnum implements BaseEnumInterface {
+public enum SysExceptionEnumBase implements EnumBaseInterface {
     /* ===========================User====================================== */
     /**
      * 数据校验异常
