@@ -1,3 +1,7 @@
+/* 多模块构建 */
+/* 父模块名称 */
 rootProject.name = 'baseframe'
+
+/* 引入子模块 */
 include 'comm'
 

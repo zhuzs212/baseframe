@@ -1,42 +1,41 @@
 ext {
-    version = [
-            spring                     : "5.3.18",
-            springboot                 : "2.6.3",
-            springCloud                : "2021.0.1",
-            springCloudAlibaba         : "2021.0.1.0",
-            loadbalancer               : "3.1.2",
+    version = [spring                     : "5.3.18",
+               springboot                 : "2.6.3",
+               springCloud                : "2021.0.1",
+               springCloudAlibaba         : "2021.0.1.0",
+               loadbalancer               : "3.1.2",
 
-            mysql                      : "8.0.28",
-            druidStarter               : "1.2.9",
-            mybatisSpringBootStarter   : "2.2.2",
+               mysql                      : "8.0.28",
+               druidStarter               : "1.2.9",
+               mybatisSpringBootStarter   : "2.2.2",
 //            sqlhelper                  : "3.6.10",
-            springBootStarterDataRedis : "2.1.2.RELEASE",
+               springBootStarterDataRedis : "2.1.2.RELEASE",
+               springfoxBootStarter       : "3.0.0",
 
-            junit                      : "5.6.2",
-            springfoxBootStarter       : "3.0.0",
-            /**
-             * Java API规范(JSR303)定义了Bean校验的标准validation-api，但没有提供实现。
-             * hibernate validation是对这个规范的实现，并增加了校验注解如@Email、@Length等。
-             * Spring Validation是对hibernate validation的二次封装，用于支持spring mvc参数自动校验。
-             */
-            springBootStarterValidation: "3.0.1",
-            lombok                     : "1.18.22",
-            slf4j                      : "1.7.36",
-            hutool                     : "5.7.22",
-            jackson                    : "2.13.2",
-            fastjson                   : "1.2.76",
-            fastjson2                  : "2.0.22",
-            okhttp                     : "4.9.3",
-            // 对象拷贝工具
-            orika                      : "2.2.6",
+               junit                      : "5.6.2",
+               springfoxBootStarter       : "3.0.0",
+               /**
+                * Java API规范(JSR303)定义了Bean校验的标准validation-api，但没有提供实现。
+                * hibernate validation是对这个规范的实现，并增加了校验注解如@Email、@Length等。
+                * Spring Validation是对hibernate validation的二次封装，用于支持spring mvc参数自动校验。*/
+               springBootStarterValidation: "3.0.1",
+               validationApi              : "3.0.0",
+               hiberValidator             : "6.2.3.Final",
+               lombok                     : "1.18.22",
+               slf4j                      : "1.7.36",
+               hutool                     : "5.7.22",
+               jackson                    : "2.13.2",
+               fastjson                   : "1.2.76",
+               fastjson2                  : "2.0.22",
+               okhttp                     : "4.9.3",
+               // 对象拷贝工具
+               orika                      : "2.2.6",
 
-            // AOP
-            aspectj                    : "1.9.9.1",
-            rocketmq                   : "2.2.2",
+               // AOP
+               aspectj                    : "1.9.9.1",
+               rocketmq                   : "2.2.2",
 
-            bootstrap                  : "3.1.3",
-
-    ]
+               bootstrap                  : "3.1.3",]
     dependencies = [
             // springboot版本管理器, springboot对gradle的支持
             'spring-boot-gradle-plugin'     : "org.springframework.boot:spring-boot-gradle-plugin:${version.springboot}",
@@ -45,15 +44,19 @@ ext {
             "mysql"                         : "mysql:mysql-connector-java:${version.mysql}",
             "druid-spring-boot-starter"     : "com.alibaba:druid-spring-boot-starter:${version.druidStarter}",
             "mybatis-spring-boot-starter"   : "org.mybatis.spring.boot:mybatis-spring-boot-starter:${version.mybatisSpringBootStarter}",
-//            "sqlhelper"                     : "com.github.fangjinuo.sqlhelper:sqlhelper-mybatis-spring-boot-starter:${version.sqlhelper}",
-//            "sqlhelper-config"              : "com.github.fangjinuo.sqlhelper:sqlhelper-mybatis-spring-boot-autoconfigure:${version.sqlhelper}",
+            "sqlhelper"                     : "com.github.fangjinuo.sqlhelper:sqlhelper-mybatis-spring-boot-starter:${version.sqlhelper}",
+            "sqlhelper-config"              : "com.github.fangjinuo.sqlhelper:sqlhelper-mybatis-spring-boot-autoconfigure:${version.sqlhelper}",
             "spring-boot-starter-data-redis": "org.springframework.boot:spring-boot-starter-data-redis:${version.springBootStarterDataRedis}",
             "spring-boot-starter-cache"     : "org.springframework.boot:spring-boot-starter-cache:${version.springBootStarterDataRedis}",
+            "springfox-boot-starter"        : "io.springfox:springfox-boot-starter:${version.springfoxBootStarter}",
+
 
             "junit"                         : "org.junit.jupiter:junit-jupiter-engine:${version.junit}",
             "springfox-boot-starter"        : "io.springfox:springfox-boot-starter:${version.springfoxBootStarter}",
             "spring-boot-starter-validation": "org.springframework.boot:spring-boot-starter-validation:${version.springBootStarterValidation}",
+            "validation-api"                : "jakarta.validation:jakarta.validation-api:${version.validationApi}",
             "hibernate-validator"           : "org.hibernate.validator:hibernate-validator:${version.hiberValidator}",
+
             "lombok"                        : "org.projectlombok:lombok:${version.lombok}",
             "slf4j"                         : "org.slf4j:slf4j-api:${version.slf4j}",
             "hutool"                        : "cn.hutool:hutool-all:${version.hutool}",
@@ -70,7 +73,6 @@ ext {
             "aspectj"                       : "org.aspectj:aspectjweaver:${version.aspectj}",
             "rocketmq-spring-boot-starter"  : "org.apache.rocketmq:rocketmq-spring-boot-starter:${version.rocketmq}",
 
-            "spring-cloud-starter-bootstrap": "org.springframework.cloud:spring-cloud-starter-bootstrap:${version.bootstrap}",
-    ]
+            "spring-cloud-starter-bootstrap": "org.springframework.cloud:spring-cloud-starter-bootstrap:${version.bootstrap}",]
 }
 

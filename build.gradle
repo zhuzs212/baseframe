@@ -36,45 +36,59 @@ allprojects {
     repositories {
         mavenLocal()
         maven {
-            allowInsecureProtocol = true
-            url = 'https://nexus.ulitom.com/repository/maven-public/'
-        }
-        maven {
             // 允许不安全协议
             allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/public'
         }
         mavenCentral()
+//        maven {
+//            allowInsecureProtocol = true
+//            url = 'https://nexus.ulitom.com/repository/maven-public/'
+//        }
     }
 }
 
 // 所有子项目的通用配置
-subprojects {
-    if (name.endsWith("comm")) {
-        // comm 模块 打包成普通jar
-        apply plugin: 'java-library'
-        bootJar.setEnabled(false)
-        jar.setEnabled(true)
-    } else {
-        dependencies {
-            //implementation fileTree(dir: '../libs', include: ['*.jar'])
-            // 基础
-            implementation 'org.springframework.boot:spring-boot-starter-web'
-            testImplementation 'org.springframework.boot:spring-boot-starter-test'
-            implementation rootProject.ext.dependencies['mysql']
-            implementation rootProject.ext.dependencies['druid-spring-boot-starter']
-            implementation rootProject.ext.dependencies['mybatis-spring-boot-starter']
-//            implementation group: 'com.baomidou', name: 'mybatis-plus', version: '3.4.3.1'
-            implementation rootProject.ext.dependencies['spring-boot-starter-data-redis']
-            // springboot提供的数据缓存功能，减少数据库的访问。
-            implementation rootProject.ext.dependencies['spring-boot-starter-cache']
+allprojects {
 
-            // 常用
-            implementation rootProject.ext.dependencies['springfox-boot-starter']
-            implementation rootProject.ext.dependencies['spring-boot-starter-validation']
-            implementation rootProject.ext.dependencies['lombok']
-            implementation rootProject.ext.dependencies['slf4j']
-            implementation rootProject.ext.dependencies['hutool']
+    // 版本统一管理
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${rootProject.ext.version.springCloud}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${rootProject.ext.version.springCloudAlibaba}"
+        }
+    }
+//    if (name.endsWith("comm")) {
+//        // comm 模块 打包成普通jar
+//        apply plugin: 'java-library'
+//        bootJar.setEnabled(false)
+//        jar.setEnabled(true)
+//    } else {
+    dependencies {
+        //implementation fileTree(dir: '../libs', include: ['*.jar'])
+        // 基础
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation rootProject.ext.dependencies['mysql']
+        implementation rootProject.ext.dependencies['druid-spring-boot-starter']
+        implementation rootProject.ext.dependencies['mybatis-spring-boot-starter']
+//            implementation group: 'com.baomidou', name: 'mybatis-plus', version: '3.4.3.1'
+        implementation rootProject.ext.dependencies['spring-boot-starter-data-redis']
+        // springboot提供的数据缓存功能，减少数据库的访问。
+        implementation rootProject.ext.dependencies['spring-boot-starter-cache']
+
+        // 常用
+        implementation rootProject.ext.dependencies['springfox-boot-starter']
+//        implementation rootProject.ext.dependencies['spring-boot-starter-validation']
+        implementation rootProject.ext.dependencies['validation-api']
+        implementation rootProject.ext.dependencies['hibernate-validator']
+        implementation rootProject.ext.dependencies['lombok']
+        implementation rootProject.ext.dependencies['slf4j']
+        implementation rootProject.ext.dependencies['hutool']
+
+        implementation rootProject.ext.dependencies['orika-starter']
+        implementation rootProject.ext.dependencies['okhttp']
+        implementation rootProject.ext.dependencies['fastjson2']
 
 
 //            implementation group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
@@ -110,23 +124,18 @@ subprojects {
 //            implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.13'
 
 
-        }
-        dependencyManagement {
-            imports {
-                mavenBom "org.springframework.cloud:spring-cloud-dependencies:${rootProject.ext.version.springCloud}"
-                mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${rootProject.ext.version.springCloudAlibaba}"
-            }
-        }
-        test {
-            useJUnitPlatform()
-        }
+    }
 
-        // 打包源码
-        task sourceJar(type: Jar) {
-            from sourceSets.main.allJava
-        }
+    test {
+        useJUnitPlatform()
+    }
 
-        // 版本发布
+    // 打包源码
+    task sourceJar(type: Jar) {
+        from sourceSets.main.allJava
+    }
+
+    // 版本发布
 //        publishing {
 //            publications {
 //                maven(MavenPublication) {
@@ -149,5 +158,5 @@ subprojects {
 //                }
 //            }
 //        }
-    }
 }
+//}

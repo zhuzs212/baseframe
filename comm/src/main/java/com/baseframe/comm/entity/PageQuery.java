@@ -2,10 +2,10 @@ package com.baseframe.comm.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import lombok.Data;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.Map;
 
