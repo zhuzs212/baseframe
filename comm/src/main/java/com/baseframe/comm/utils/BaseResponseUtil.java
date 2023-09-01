@@ -1,10 +1,10 @@
 package com.baseframe.comm.utils;
 
-import com.baseframe.comm.constant.EnumBaseInterface;
 import com.baseframe.comm.constant.Constant;
-import com.baseframe.comm.constant.SysExceptionEnumBase;
-import com.baseframe.comm.exception.ServiceException;
+import com.baseframe.comm.constant.EnumBaseInterface;
+import com.baseframe.comm.constant.SysExceptionEnum;
 import com.baseframe.comm.entity.BaseResponse;
+import com.baseframe.comm.exception.ServiceException;
 
 /**
  * 通用返回数据模型
@@ -29,7 +29,7 @@ public final class BaseResponseUtil {
      */
     private BaseResponseUtil() {
         // TODO 可抛出异常，防止通过反射实例化对象
-        throw new ServiceException(SysExceptionEnumBase.SYS_EXCEPTION);
+        throw new ServiceException(SysExceptionEnum.SYS_EXCEPTION);
     }
 
     /**

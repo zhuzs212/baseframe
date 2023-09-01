@@ -1,6 +1,6 @@
 package com.baseframe.comm.advice;
 
-import com.baseframe.comm.constant.OperationEnumBase;
+import com.baseframe.comm.constant.OperationEnum;
 import com.baseframe.comm.exception.ServiceException;
 import com.baseframe.comm.utils.BaseResponseUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -36,11 +36,11 @@ public class CustomWrapHandler<T> implements ResponseBodyAdvice<T> {
          * 增、删、改操作返回的状态
          */
         if (null == body) {
-            throw new ServiceException(OperationEnumBase.OPERATION_ERROR);
+            throw new ServiceException(OperationEnum.OPERATION_ERROR);
         }
-        if (OperationEnumBase.class.equals(body.getClass())) {
+        if (OperationEnum.class.equals(body.getClass())) {
             log.info(MessageFormat.format("接口: '{}' , 增删改方法！{0}", request.getURI()));
-            return (T) BaseResponseUtil.success((OperationEnumBase) body);
+            return (T) BaseResponseUtil.success((OperationEnum) body);
         }
 
         /*

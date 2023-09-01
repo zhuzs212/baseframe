@@ -1,0 +1,8 @@
+dependencies {
+    implementation project(':comm')
+    implementation rootProject.ext.dependencies['aspectj']
+    implementation rootProject.ext.dependencies['slf4j']
+    implementation rootProject.ext.dependencies['hutool']
+
+    implementation 'dev.akkinoc.spring.boot:orika-spring-boot-starter:2.2.6'
+}

@@ -1,6 +1,5 @@
 package com.baseframe.comm.constant;
 
-
 import lombok.AllArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -12,7 +11,7 @@ import lombok.experimental.Accessors;
  */
 @AllArgsConstructor
 @Accessors(chain = true)
-public enum OperationEnumBase implements EnumBaseInterface {
+public enum OperationEnum implements EnumBaseInterface {
     /**
      * 登陆成功
      */

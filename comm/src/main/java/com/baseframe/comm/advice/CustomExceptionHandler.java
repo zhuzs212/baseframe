@@ -1,8 +1,8 @@
 package com.baseframe.comm.advice;
 
-import com.baseframe.comm.constant.SysExceptionEnumBase;
-import com.baseframe.comm.exception.ServiceException;
+import com.baseframe.comm.constant.SysExceptionEnum;
 import com.baseframe.comm.entity.BaseResponse;
+import com.baseframe.comm.exception.ServiceException;
 import com.baseframe.comm.utils.BaseResponseUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.FieldError;
@@ -29,7 +29,7 @@ public class CustomExceptionHandler {
     @ResponseBody
     public BaseResponse<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         log.warn("系统参数校验异常，异常信息：", e);
-        return BaseResponseUtil.fail(SysExceptionEnumBase.PARAMETER_EMPTY_EXCEPTION.getCode(), e.getBindingResult().getFieldErrors().stream()
+        return BaseResponseUtil.fail(SysExceptionEnum.PARAMETER_EMPTY_EXCEPTION.getCode(), e.getBindingResult().getFieldErrors().stream()
                 .map(FieldError::getDefaultMessage).collect(Collectors.joining(",")));
     }
 
@@ -51,6 +51,6 @@ public class CustomExceptionHandler {
     @ResponseBody
     public BaseResponse<Object> handleException(Exception e) {
         log.error("系统异常，异常信息：{}", e.getMessage());
-        return BaseResponseUtil.error(SysExceptionEnumBase.SYS_EXCEPTION);
+        return BaseResponseUtil.error(SysExceptionEnum.SYS_EXCEPTION);
     }
 }
